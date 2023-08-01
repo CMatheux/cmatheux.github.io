@@ -279,7 +279,9 @@
 
             console.log(valorA, valorB, valorC);
 
-            if (valorA === null || valorA === undefined || valorB === null || valorB === undefined || valorC === null || valorC === undefined) {
+            if (
+                !document.getElementById("valora").value || !document.getElementById("valorb").value || !document.getElementById("valorc").value ||
+                valorA === null || valorA === undefined || valorB === null || valorB === undefined || valorC === null || valorC === undefined) {
                 document.getElementById("resultadoUsuario").innerText = `você precisa informar os valores de A, B e C`
             } else {
                 if (valorA === 0) {
