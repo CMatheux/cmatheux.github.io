@@ -16,10 +16,6 @@
             font-size: 24px;
         }
 
-        span {
-            font: 25pt arial;
-        }
-
         .row {
             display: flex;
             flex-direction: row;
@@ -47,6 +43,12 @@
             padding-top: 20px;
         }
 
+        .pb-20 {
+            padding-bottom: 20px;
+        }
+
+
+
         .main-button {
             background-color: blueviolet;
             color: aliceblue;
@@ -67,15 +69,34 @@
         input {
             font-size: 24px;
         }
+
+        .detalhes {
+            font-size: 20px !important;
+            font-style: italic !important;
+            color: rgb(109 108 124);
+        }
     </style>
 </head>
 
 <body class="p-20">
     <h1>CALCULADORA MATEMÁTICA</h1>
-    <p>faza calculos de perimetros e areas de poligonos regulares,equações de 1° e 2° grau e muito mais </p>
+    <p>faza calculos de perimetros e areas de poligonos regulares,equações de 2° grau,relações Trigonométricas e muito
+        mais </p>
 
+    <p>Selecione o calculo que você deseja fazer</p>
+    <input type="radio" id="radio-poligonos" name="tipoCalculo" value="poligonos"
+        onchange="selecionaAtividade('div-poligonos')">
+    <label for="radio-poligonos">Área e Perimetro</label><br>
+    <input type="radio" id="radio-trigonometria" name="tipoCalculo" value="trigonometria"
+        onchange="selecionaAtividade('div-trigonometria')">
+    <label for="radio-trigonometria">Razões Trigonométricas</label><br>
+    <input type="radio" id="radio-seggrau" name="tipoCalculo" value="seggrau"
+        onchange="selecionaAtividade('div-seggrau')">
+    <label for="radio-seggrau">Equações de 2° grau</label>
+
+    <div class="pb-20"></div>
     <!--SELECAO-->
-    <div class="row">
+    <div id="div-poligonos" style="display: none;" class="row">
         <select name="ESAP" id="tipo" onchange="selecionar()">
             <option value="" selected disabled hidden>Selecione...</option>
             <option value="area">Área</option>
@@ -95,119 +116,212 @@
             <option value="decagono">Decágono</option>
         </select>
     </div>
+    </div>
     <!--FIM SELECAO-->
 
 
     <!--AREAS-->
     <!--AREA TRIANGULO-->
     <div class="pt-20 col" id="area-triangulo" style="display: none;">
-        <span>BASE:</span><input id="base" type="number">
+        <span>Valor da Base:</span><input id="base" type="number">
         <div class="pt-20"></div>
-        <span>ALTURA:</span><input id="altura" type="number">
+        <span>Valor da Altura:</span><input id="altura" type="number">
     </div>
 
     <!--AREA RETANGULO-->
     <div class="pt-20 col" id="area-retangulo" style="display: none;">
-        <span>BASE:</span><input id="base-retangulo" type="number">
+        <span>Valor da Base:</span><input id="base-retangulo" type="number">
         <div class="pt-20"></div>
-        <span>ALTURA:</span><input id="altura-retangulo" type="number">
+        <span>Valor da Altura:</span><input id="altura-retangulo" type="number">
     </div>
 
     <!--AREA QUADRADO-->
     <div class="pt-20 col" id="area-quadrado" style="display: none;">
-        <span>LADO:</span><input id="lado-quadrado" type="number">
+        <span>Valor do Lado:</span><input id="lado-quadrado" type="number">
         <div class="pt-20"></div>
     </div>
 
     <!--AREA PENTAGONO-->
     <div class="pt-20 col" id="area-pentagono" style="display: none;">
-        <span>LADO:</span><input id="lado-pentagono" type="number">
+        <span>Valor do Lado:</span><input id="lado-pentagono" type="number">
         <div class="pt-20"></div>
-        <span>APÓTEMA:</span><input id="apotema-pentagono" type="number">
+        <span>Valor da Apótema:</span><input id="apotema-pentagono" type="number">
     </div>
     <!--AREA HEXAGONO-->
     <div class="pt-20 col" id="area-hexagono" style="display: none;">
-        <span>LADO:</span><input id="lado-hexagono" type="number">
+        <span>Valor do Lado:</span><input id="lado-hexagono" type="number">
         <div class="pt-20"></div>
-        <span>APÓTEMA:</span><input id="apotema-hexagono" type="number">
+        <span>Valor da Apótema:</span><input id="apotema-hexagono" type="number">
     </div>
     <!--AREA HEPTAGONO-->
     <div class="pt-20 col" id="area-heptagono" style="display: none;">
-        <span>LADO:</span><input id="lado-heptagono" type="number">
+        <span>Valor do Lado:</span><input id="lado-heptagono" type="number">
         <div class="pt-20"></div>
-        <span>APÓTEMA:</span><input id="apotema-hepatgono" type="number">
+        <span>Valor da Apótema:</span><input id="apotema-hepatgono" type="number">
     </div>
     <!--AREA OCTOGONO-->
     <div class="pt-20 col" id="area-octogono" style="display: none;">
-        <span>LADO:</span><input id="lado-octogono" type="number">
+        <span>Valor do Lado:</span><input id="lado-octogono" type="number">
         <div class="pt-20"></div>
-        <span>APÓTEMA:</span><input id="apotema-octogono" type="number">
+        <span>Valor da Apótema:</span><input id="apotema-octogono" type="number">
     </div>
     <!--AREA ENEAGONO-->
     <div class="pt-20 col" id="area-eneagono" style="display: none;">
-        <span>LADO:</span><input id="lado-eneagono" type="number">
+        <span>Valor do Lado:</span><input id="lado-eneagono" type="number">
         <div class="pt-20"></div>
-        <span>APÓTEMA:</span><input id="apotema-eneagono" type="number">
+        <span>Valor da Apótema:</span><input id="apotema-eneagono" type="number">
     </div>
     <!--AREA DECAGONO-->
     <div class="pt-20 col" id="area-decagono" style="display: none;">
-        <span>LADO:</span><input id="lado-decagono" type="number">
+        <span>Valor do Lado:</span><input id="lado-decagono" type="number">
         <div class="pt-20"></div>
-        <span>APÓTEMA:</span><input id="apotema-decagono" type="number">
+        <span>Valor da Apótema:</span><input id="apotema-decagono" type="number">
     </div>
 
     <!--PERIMETROS-->
     <div class="pt-20 col" id="perimetro-triangulo" style="display: none;">
-        <span>LADO 01:</span><input id="lado1-triangulo" type="number">
+        <span>Valor do Lado 01:</span><input id="lado1-triangulo" type="number">
         <div class="pt-20"></div>
-        <span>LADO 02:</span><input id="lado2-triangulo" type="number">
+        <span>Valor do Lado 02:</span><input id="lado2-triangulo" type="number">
         <div class="pt-20"></div>
-        <span>LADO 03:</span><input id="lado3-triangulo" type="number">
+        <span>Valor do Lado 03:</span><input id="lado3-triangulo" type="number">
     </div>
 
     <div class="pt-20 col" id="perimetro-quadrado" style="display: none;">
-        <span>VALOR DO LADO:</span><input id="lado1-quadrado" type="number">
+        <span>Valor dos Lados:</span><input id="lado1-quadrado" type="number">
     </div>
 
     <div class="pt-20 col" id="perimetro-retangulo" style="display: none;">
-        <span>LADO MAIOR:</span><input id="lado1-retangulo" type="number">
+        <span>Valor do Lado Maior:</span><input id="lado1-retangulo" type="number">
         <div class="pt-20"></div>
-        <span>LADO MENOR:</span><input id="lado2-retangulo" type="number">
+        <span>Valor do Lado Menor:</span><input id="lado2-retangulo" type="number">
     </div>
 
     <div class="pt-20 col" id="perimetro-pentagono" style="display: none;">
-        <span>VALOR DO LADO:</span><input id="lado1-pentagono" type="number">
+        <span>Valor dos Lados:</span><input id="lado1-pentagono" type="number">
     </div>
 
     <div class="pt-20 col" id="perimetro-hexagono" style="display: none;">
-        <span>VALOR DO LADO:</span><input id="lado1-hexagono" type="number">
+        <span>Valor dos Lados:</span><input id="lado1-hexagono" type="number">
     </div>
 
     <div class="pt-20 col" id="perimetro-heptagono" style="display: none;">
-        <span>VALOR DO LADO:</span><input id="lado1-heptagono" type="number">
+        <span>Valor dos Lados:</span><input id="lado1-heptagono" type="number">
     </div>
 
     <div class="pt-20 col" id="perimetro-octogono" style="display: none;">
-        <span>VALOR DO LADO:</span><input id="lado1-octogono" type="number">
+        <span>Valor dos Lados:</span><input id="lado1-octogono" type="number">
     </div>
 
     <div class="pt-20 col" id="perimetro-eneagono" style="display: none;">
-        <span>VALOR DO LADO:</span><input id="lado1-eneagono" type="number">
+        <span>Valor dos Lados:</span><input id="lado1-eneagono" type="number">
     </div>
     <div class="pt-20 col" id="perimetro-decagono" style="display: none;">
-        <span>VALOR DO LADO:</span><input id="lado1-decagono" type="number">
+        <span>Valor dos Lados:</span><input id="lado1-decagono" type="number">
     </div>
 
-    <!------------>
 
-    <p id="resultado">vamos ver...</p>
-    <button class="main-button" onclick="calcular()">Resultado</button>
+    <!-------------------->
+
+    <div id="div-trigonometria" style="display: none;">AQUI vão as coisas de relaçoes trigonométricas em breve...🙏
+    </div>
+
+
+    <div class="row" id="div-seggrau" style="display: none;">
+        <div class="col pr-20">
+            <span>Valor de A</span>
+            <div class="row">
+                <input type="number" id="valora">
+                <span>X²</span>
+            </div>
+        </div>
+        <div class="col pr-20">
+            <span>Valor de B:</span>
+            <div class="row">
+                <input type="number" id="valorb">
+                <span>X</span>
+            </div>
+        </div>
+        <div class="col">
+            <span>Valor de C:</span>
+            <div class="row">
+                <input type="number" id="valorc">
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <span id="resultadoUsuario"></span>
+    </div>
+    <div class="detalhes">
+        <span id="detalhes"></span>
+    </div>
+
+    <div class="pt-20">
+        <button class="main-button" onclick="calcular()">Calcular</button>
+    </div>
+
+
     <script>
+
         let objeto;
-        let tipo
+        let tipo;
+        let tipoCalculo;
+
+        function formatarResultado(valor) {
+            return valor.toFixed(3).replace('.', ',');
+        }
+
+        function equacaoSegundoGrau() {
+            const valorA = parseFloat(document.getElementById("valora").value);
+            const valorB = parseFloat(document.getElementById("valorb").value);
+            const valorC = parseFloat(document.getElementById("valorc").value);
+
+            console.log(valorA, valorB, valorC);
+
+            if (valorA === null || valorA === undefined || valorB === null || valorB === undefined || valorC === null || valorC === undefined) {
+                document.getElementById("resultadoUsuario").innerText = `você precisa informar os valores de A, B e C`
+            } else {
+                if (valorA === 0) {
+                    document.getElementById("resultadoUsuario").innerText = `O valor de "a" não pode ser igual a zero!`
+                } else {
+                    const delta = (valorB * valorB) - (4 * valorA * valorC);
+                    const X1 = ((-1 * valorB) + Math.sqrt(delta)) / (2 * valorA);
+                    const X2 = ((-1 * valorB) - Math.sqrt(delta)) / (2 * valorA);
+
+                    const operadorB = valorB > 0 ? '+' : '';
+                    const operadorC = valorC > 0 ? '+' : '';
+
+                    const equacao = `${valorA}X² ${operadorB}${valorB}X ${operadorC}${valorC}`;
+
+                    if (delta < 0) {
+                        document.getElementById("resultadoUsuario").innerText = `Delta menor que zero. Não existem raizes reais para a equação ${equacao}`
+                    } else if (delta === 0) {
+                        document.getElementById("resultadoUsuario").innerText = `O valor do ponto que resolve a equação ${equacao} é X1=${formatarResultado(X1)}`;
+                    } else {
+                        document.getElementById("resultadoUsuario").innerText = `Os valores dos pontos que resolvem a equação ${equacao} são X1=${formatarResultado(X1)} e X2=${formatarResultado(X2)}`;
+                    }
+
+                    const detalhes = `\nDelta = b² - 4.a.c\nDelta = (${valorB})² - 4.(${valorA}).(${valorC})\nDelta = ${delta}\n\n`
+                    document.getElementById("detalhes").innerText = detalhes;
+                }
+
+            }
+        }
+
+        function selecionaAtividade(selecao) {
+            limparResultado();
+            ocultarElementos();
+            tipoCalculo = selecao;
+            document.getElementById('div-poligonos').style.display = 'none';
+            document.getElementById('div-trigonometria').style.display = 'none';
+            document.getElementById('div-seggrau').style.display = 'none';
+            document.getElementById(selecao).style.display = 'flex';
+        }
 
         function limparResultado() {
-            document.getElementById("resultado").innerText = '';
+            document.getElementById("resultadoUsuario").innerText = '';
+            document.getElementById("detalhes").innerText = '';
         }
 
         function ocultarElementos() {
@@ -229,13 +343,11 @@
             document.getElementById('perimetro-eneagono').style.display = 'none';
             document.getElementById('area-decagono').style.display = 'none';
             document.getElementById('perimetro-decagono').style.display = 'none';
-
         }
 
         function selecionar() {
             tipo = document.getElementById("tipo").value;
             objeto = document.getElementById("objeto").value;
-
             limparResultado();
             ocultarElementos();
             if (tipo && objeto) {
@@ -248,104 +360,112 @@
             const altura = parseFloat(document.getElementById("altura").value);
 
             if (!base || !altura) {
-                document.getElementById("resultado").innerText = `Voce precisa informar a base e a altura do triângulo`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar a base e a altura do triângulo`;
             } else {
                 const resultadoTriangulo = base * altura / 2;
-                document.getElementById("resultado").innerText = `O resultado da area do triângulo de base = ${base} e altura = ${altura} é de ${resultadoTriangulo}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do triângulo de base = ${base} e altura = ${altura} é de ${resultadoTriangulo}`;
             }
         }
+
         function areaRetangulo() {
             const baseRetangulo = parseFloat(document.getElementById("base-retangulo").value);
             const alturaRetangulo = parseFloat(document.getElementById("altura-retangulo").value);
 
             if (!baseRetangulo || !alturaRetangulo) {
-                document.getElementById("resultado").innerText = `Voce precisa informar a base e a altura do retangulo`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar a base e a altura do retangulo`;
             } else {
                 const resultadoRetangulo = baseRetangulo * alturaRetangulo;
-                document.getElementById("resultado").innerText = `O resultado da area do retangulo de base = ${baseRetangulo} e altura = ${alturaRetangulo} é de ${resultadoRetangulo}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do retangulo de base = ${baseRetangulo} e altura = ${alturaRetangulo} é de ${resultadoRetangulo}`;
             }
 
         }
+
         function areaQuadrado() {
             const ladoQuadrado = parseFloat(document.getElementById("lado-quadrado").value);
             const resultadoQuadrado = ladoQuadrado * ladoQuadrado;
 
             if (!ladoQuadrado) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o lado do quadrado`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado do quadrado`;
             } else {
                 const resultadoQuadrado = ladoQuadrado * ladoQuadrado;
-                document.getElementById("resultado").innerText = `O resultado da area do quadrado de lado = ${ladoQuadrado} é de ${resultadoQuadrado}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do quadrado de lado = ${ladoQuadrado} é de ${resultadoQuadrado}`;
             }
         }
+
         function areaPentagono() {
             const ladoPentagono = parseFloat(document.getElementById("lado-pentagono").value);
             const apotemaPentagono = parseFloat(document.getElementById("apotema-pentagono").value);
 
             if (!ladoPentagono || !apotemaPentagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o lado e a apótema do pentágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do pentágono`;
             } else {
                 const resultadoPentagono = 5 * ladoPentagono * apotemaPentagono;
-                document.getElementById("resultado").innerText = `O resultado da area do pentágono de lado = ${ladoPentagono} e apótema = ${apotemaPentagono} é de ${resultadoPentagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do pentágono de lado = ${ladoPentagono} e apótema = ${apotemaPentagono} é de ${resultadoPentagono}`;
             }
 
         }
+
         function areaHexagono() {
             const ladoHexagono = parseFloat(document.getElementById("lado-hexagono").value);
             const apotemaHexagono = parseFloat(document.getElementById("apotema-hexagono").value);
 
             if (!ladoHexagono || !apotemaHexagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o lado e a apótema do hexágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do hexágono`;
             } else {
                 const resultadoHexagono = 6 * ladoHexagono * apotemaHexagono / 2;
-                document.getElementById("resultado").innerText = `O resultado da area do hexágono de lado = ${ladoHexagono} e apótema = ${apotemaHexagono} é de ${resultadoHexagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do hexágono de lado = ${ladoHexagono} e apótema = ${apotemaHexagono} é de ${resultadoHexagono}`;
             }
 
         }
+
         function areaHeptagono() {
             const ladoHeptagono = parseFloat(document.getElementById("lado-heptagono").value);
             const apotemaHeptagono = parseFloat(document.getElementById("apotema-hepatgono").value);
 
             if (!ladoHeptagono || !apotemaHeptagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o lado e a apótema do heptágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do heptágono`;
             } else {
                 const resultadoHeptagono = 7 / 2 * ladoHeptagono * apotemaHeptagono;
-                document.getElementById("resultado").innerText = `O resultado da area do heptágono de lado = ${ladoHeptagono} e apótema = ${apotemaHeptagono} é de ${resultadoHeptagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do heptágono de lado = ${ladoHeptagono} e apótema = ${apotemaHeptagono} é de ${resultadoHeptagono}`;
             }
 
         }
+
         function areaOctogono() {
             const ladoOctogono = parseFloat(document.getElementById("lado-octogono").value);
             const apotemaOctogono = parseFloat(document.getElementById("apotema-octogono").value);
 
             if (!ladoOctogono || !apotemaOctogono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o lado e a apótema do octógono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do octógono`;
             } else {
                 const resultadoOctogono = 4 * ladoOctogono * apotemaOctogono;
-                document.getElementById("resultado").innerText = `O resultado da area do octógono de lado = ${ladoOctogono} e apótema = ${apotemaOctogono} é de ${resultadoOctogono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do octógono de lado = ${ladoOctogono} e apótema = ${apotemaOctogono} é de ${resultadoOctogono}`;
             }
 
         }
+
         function areaEneagono() {
             const ladoEneagono = parseFloat(document.getElementById("lado-eneagono").value);
             const apotemaEneagono = parseFloat(document.getElementById("apotema-eneagono").value);
 
             if (!ladoEneagono || !apotemaEneagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o lado e a apótema do eneágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do eneágono`;
             } else {
                 const resultadoEneagono = ladoEneagono * 9 / 2 * apotemaEneagono;
-                document.getElementById("resultado").innerText = `O resultado da area do eneágono de lado = ${ladoEneagono} e apótema = ${apotemaEneagono} é de ${resultadoEneagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do eneágono de lado = ${ladoEneagono} e apótema = ${apotemaEneagono} é de ${resultadoEneagono}`;
             }
 
         }
+
         function areaDecagono() {
             const ladoDecagono = parseFloat(document.getElementById("lado-decagono").value);
             const apotemaDecagono = parseFloat(document.getElementById("apotema-decagono").value);
 
             if (!ladoDecagono || !apotemaDecagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o lado e a apótema do decágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do decágono`;
             } else {
                 const resultadoDecagono = 5 * ladoDecagono * apotemaDecagono;
-                document.getElementById("resultado").innerText = `O resultado da area do dácagono de lado = ${ladoDecagono} e apótema = ${apotemaDecagono} é de ${resultadoDecagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado da area do dácagono de lado = ${ladoDecagono} e apótema = ${apotemaDecagono} é de ${resultadoDecagono}`;
             }
 
         }
@@ -355,95 +475,103 @@
             const lado2 = parseFloat(document.getElementById("lado2-" + objeto).value);
             const lado3 = parseFloat(document.getElementById("lado3-" + objeto).value);
             if (!lado1 || !lado2 || !lado3) {
-                document.getElementById("resultado").innerText = `Voce precisa informar todos os lados do triangulo`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar todos os lados do triangulo`;
             } else {
                 const resultadoPerimetroTriangulo = lado1 + lado2 + lado3;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do triangulo que tem o primeiro lado = ${lado1},o segundo lado = ${lado2},e o terceiro lado = ${lado3} é de ${resultadoPerimetroTriangulo}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do triangulo que tem o primeiro lado = ${lado1},o segundo lado = ${lado2},e o terceiro lado = ${lado3} é de ${resultadoPerimetroTriangulo}`;
             }
         }
+
         function perimetroRetangulo() {
             const ladoMenor = parseFloat(document.getElementById("lado1-retangulo").value);
             const ladoMaior = parseFloat(document.getElementById("lado2-retangulo").value);
 
             if (!ladoMenor || !ladoMaior) {
-                document.getElementById("resultado").innerText = `Voce precisa informar os lados do retangulo`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar os lados do retangulo`;
             } else {
                 const resultadoPerimetroRetangulo = 2 * ladoMenor + ladoMaior * 2;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do retangulo de lado menor = ${ladoMenor} e lado maior = ${ladoMaior} é de ${resultadoPerimetroRetangulo}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do retangulo de lado menor = ${ladoMenor} e lado maior = ${ladoMaior} é de ${resultadoPerimetroRetangulo}`;
             }
         }
+
         function perimetroQuadrado() {
             const ladoquadrado = parseFloat(document.getElementById("lado1-quadrado").value)
 
             if (!ladoquadrado) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o valor do lado do quadrado`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do quadrado`;
             } else {
                 const resultadoPerimetroQuadrado = 4 * ladoquadrado;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do quadrado de lado = ${ladoquadrado} é de ${resultadoPerimetroQuadrado}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do quadrado de lado = ${ladoquadrado} é de ${resultadoPerimetroQuadrado}`;
             }
         }
+
         function perimetroPentagono() {
             const ladopentagono = parseFloat(document.getElementById("lado1-pentagono").value)
 
             if (!ladopentagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o valor do lado do pentágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do pentágono`;
             } else {
                 const resultadoPerimetroPentagono = 5 * ladopentagono;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do pentágono de lado = ${ladopentagono} é de ${resultadoPerimetroPentagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do pentágono de lado = ${ladopentagono} é de ${resultadoPerimetroPentagono}`;
             }
         }
+
         function perimetroHexagono() {
             const ladohexagono = parseFloat(document.getElementById("lado1-hexagono").value)
 
             if (!ladohexagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o valor do lado do hexágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do hexágono`;
             } else {
                 const resultadoPerimetroHexagono = 6 * ladohexagono;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do hexágono de lado = ${ladohexagono} é de ${resultadoPerimetroHexagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do hexágono de lado = ${ladohexagono} é de ${resultadoPerimetroHexagono}`;
             }
         }
+
         function perimetroHeptagono() {
             const ladoheptagono = parseFloat(document.getElementById("lado1-heptagono").value)
 
             if (!ladoheptagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o valor do lado do heptágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do heptágono`;
             } else {
                 const resultadoPerimetroHeptagono = 7 * ladoheptagono;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do heptágono de lado = ${ladoheptagono} é de ${resultadoPerimetroHeptagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do heptágono de lado = ${ladoheptagono} é de ${resultadoPerimetroHeptagono}`;
             }
         }
+
         function perimetroOctogono() {
             const ladooctogono = parseFloat(document.getElementById("lado1-octogono").value)
 
             if (!ladooctogono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o valor do lado do octógono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do octógono`;
             } else {
                 const resultadoPerimetroOctogono = 8 * ladooctogono;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do octógono de lado = ${ladooctogono} é de ${resultadoPerimetroOctogono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do octógono de lado = ${ladooctogono} é de ${resultadoPerimetroOctogono}`;
             }
         }
+
         function perimetroEneagono() {
             const ladoeneagono = parseFloat(document.getElementById("lado1-eneagono").value)
 
             if (!ladoeneagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o valor do lado do eneágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do eneágono`;
             } else {
                 const resultadoPerimetroEneagono = 9 * ladoeneagono;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do eneágono de lado = ${ladoeneagono} é de ${resultadoPerimetroEneagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do eneágono de lado = ${ladoeneagono} é de ${resultadoPerimetroEneagono}`;
             }
         }
+
         function perimetroDecagono() {
             const ladodecagono = parseFloat(document.getElementById("lado1-decagono").value)
 
             if (!ladodecagono) {
-                document.getElementById("resultado").innerText = `Voce precisa informar o valor do lado do decágono`;
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do decágono`;
             } else {
                 const resultadoPerimetroDecagono = 10 * ladodecagono;
-                document.getElementById("resultado").innerText = `O resultado do perimetro do decágono de lado = ${ladodecagono} é de ${resultadoPerimetroDecagono}`;
+                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do decágono de lado = ${ladodecagono} é de ${resultadoPerimetroDecagono}`;
             }
         }
 
-        function calcular() {
+        function calcularAreaPerimetro() {
             if (objeto === 'triangulo') {
                 if (tipo === 'area') {
                     areaTriangulo();
@@ -498,6 +626,14 @@
                 } else {
                     perimetroDecagono();
                 }
+            }
+        }
+
+        function calcular() {
+            if (tipoCalculo === 'div-seggrau') {
+                equacaoSegundoGrau()
+            } else if (tipoCalculo === 'div-poligonos') {
+                calcularAreaPerimetro();
             }
         }
     </script>
