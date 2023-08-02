@@ -1,131 +1,119 @@
 <!DOCTYPE html>
-<html lang="PT-br">
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
     <title>Calculadora Matematica</title>
+
     <style>
-        body {
-            background-color: rgb(255, 218, 169);
-            color: rgb(36, 20, 12);
-            font-size: 24px;
-        }
-
-        select {
-            font-size: 24px;
-        }
-
-        .row {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .col {
-            display: inline-flex;
-            flex-direction: column;
-
-        }
-
-        .p-20 {
-            padding: 20px;
-        }
-
-        .pr-20 {
-            padding-right: 20px;
-        }
-
-        .pl-20 {
-            padding-right: 20px;
-        }
-
-        .pt-20 {
-            padding-top: 20px;
-        }
-
-        .pb-20 {
-            padding-bottom: 20px;
-        }
-
-
-
-        .main-button {
-            background-color: blueviolet;
-            color: aliceblue;
-            padding: 10px;
-            border: solid 2px rgb(64, 2, 122);
-            font-size: 24px;
-        }
-
-        .main-button:hover {
-            background-color: rgb(171, 92, 245)
-        }
-
-        .main-button:active {
-            background-color: rgb(190, 128, 248);
-            transform: scale(0.96);
-        }
-
-        input {
-            font-size: 24px;
-        }
-
-        .detalhes {
-            font-size: 20px !important;
-            font-style: italic !important;
-            color: rgb(109 108 124);
+        .body-page {
+            background-color: rgb(243, 243, 243);
         }
     </style>
+
 </head>
 
-<body class="p-20">
-    <h1>CALCULADORA MATEMÁTICA</h1>
-    <p>faza calculos de perimetros e areas de poligonos regulares,equações de 2° grau,relações Trigonométricas e muito
-        mais </p>
+<body class="p-md-4 p-2 body-page">
 
-    <p>Selecione o calculo que você deseja fazer</p>
-    <input type="radio" id="radio-poligonos" name="tipoCalculo" value="poligonos"
-        onchange="selecionaAtividade('div-poligonos')">
-    <label for="radio-poligonos">Área e Perimetro</label><br>
-    <input type="radio" id="radio-trigonometria" name="tipoCalculo" value="trigonometria"
-        onchange="selecionaAtividade('div-trigonometria')">
-    <label for="radio-trigonometria">Razões Trigonométricas</label><br>
-    <input type="radio" id="radio-seggrau" name="tipoCalculo" value="seggrau"
-        onchange="selecionaAtividade('div-seggrau')">
-    <label for="radio-seggrau">Equações de 2° grau</label>
 
-    <div class="pb-20"></div>
+    <div class="alert alert-primary mt-2">
+        <h1 class="text-center">CALCULADORA MATEMÁTICA</h1>
+        <span>faça cálculos de perimetros e areas de poligonos regulares, equações de 2° grau,
+            relações trigonométricas e
+            muito
+            mais</span>
+
+    </div>
+
+    <span>Selecione o cálculo que você deseja realizar:</span>
+
+    <div class="btn-group mt-2 mb-2" role="grupoEscolhaPrincipal" aria-label="Basic example">
+        <button id="btn-selecao-poligonos" type="button" class="btn btn-primary"
+            onclick="selecionaAtividade('selecao-poligonos')">Area e
+            Perimetro</button>
+        <button id="btn-selecao-trigonometria" type="button" class="btn btn-primary"
+            onclick="selecionaAtividade('selecao-trigonometria')">Razões
+            Trigonométricas</button>
+        <button id="btn-selecao-segundograu" type="button" class="btn btn-primary"
+            onclick="selecionaAtividade('selecao-segundograu')">Equações do 2°
+            Grau</button>
+    </div>
+
+
     <!--SELECAO-->
-    <div id="div-poligonos" style="display: none;" class="row">
-        <select name="ESAP" id="tipo" onchange="selecionar()">
-            <option value="" selected disabled hidden>Selecione...</option>
-            <option value="area">Área</option>
-            <option value="perimetro">Perimetro</option>
-        </select>
-        <div class="pr-20"></div>
-        <select id="objeto" onchange="selecionar()">
-            <option value="" selected disabled hidden>Selecione...</option>
-            <option value="triangulo">Triângulo</option>
-            <option value="retangulo">Retângulo</option>
-            <option value="quadrado">Quadrado</option>
-            <option value="pentagono">Pentágono</option>
-            <option value="hexagono">Hexágono</option>
-            <option value="heptagono">Heptágono</option>
-            <option value="octogono">Octógono</option>
-            <option value="eneagono">Eneágono</option>
-            <option value="decagono">Decágono</option>
-        </select>
+    <div class="card" id="selecao-poligonos" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Opções de área e perímetro
+        </div>
+        <div class="card-body row">
+            <div class="col col-6">
+                <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                    <button id="selecao-poligonos-area" type="button" class="btn btn-primary"
+                        onclick="selecionarTipo('area')">Área</button>
+                    <button id="selecao-poligonos-perimetro" type="button" class="btn btn-primary"
+                        onclick="selecionarTipo('perimetro')">Perímetro</button>
+                </div>
+            </div>
+            <div class="col col-6">
+                <div class="dropdown">
+                    <button class="btn btn-primary dropdown-toggle" type="button" id="dropdown-selecao-poligonos"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Polígonos
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" id="objeto">
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('triangulo', 'Triângulo')">Triângulo</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('retangulo', 'Retângulo')">Retângulo</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('quadrado', 'Quadrado')">Quadrado</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('pentagono', 'Pentágono')">Pentágono</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('hexagono', 'Hexágono')">Hexágono</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('heptagono', 'Heptágono')">Heptágono</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('octogono', 'Octógono')">Octógono</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('eneagono', 'Eneágono')">Eneágono</a></li>
+                        <li><a class="dropdown-item" href="#"
+                                onclick="selecionarObjeto('decagono', 'Decágono')">Decágono</a></li>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
     </div>
-    </div>
+
     <!--FIM SELECAO-->
 
 
     <!--AREAS-->
     <!--AREA TRIANGULO-->
-    <div class="pt-20 col" id="area-triangulo" style="display: none;">
-        <span>Valor da Base:</span><input id="base" type="number">
-        <div class="pt-20"></div>
-        <span>Valor da Altura:</span><input id="altura" type="number">
+    <div class="card mt-2" id="area-triangulo" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do triângulo
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="base">Valor da Base</label>
+                    <input type="email" class="form-control" id="base" placeholder="informe a base">
+                    <div class="mt-2"></div>
+                    <label for="altura">Valor da Altura</label>
+                    <input type="email" class="form-control" id="altura" placeholder="informe a altura">
+                </div>
+            </div>
+        </div>
     </div>
 
     <!--AREA RETANGULO-->
@@ -223,11 +211,12 @@
 
     <!-------------------->
 
-    <div id="div-trigonometria" style="display: none;">AQUI vão as coisas de relaçoes trigonométricas em breve...🙏
+    <div id="selecao-trigonometria" class="alert alert-warning" style="display: none;">AQUI vão as coisas de relaçoes
+        trigonométricas em breve...🙏
     </div>
 
 
-    <div class="row" id="div-seggrau" style="display: none;">
+    <div class="row" id="selecao-segundograu" style="display: none;">
         <div class="col pr-20">
             <span>Valor de A</span>
             <div class="row">
@@ -250,23 +239,50 @@
         </div>
     </div>
 
-    <div>
+    <div id="div-resultado" class="alert alert-success mt-2" style="display: none;">
         <span id="resultadoUsuario"></span>
     </div>
     <div class="detalhes">
         <span id="detalhes"></span>
     </div>
 
-    <div class="pt-20">
-        <button class="main-button" onclick="calcular()">Calcular</button>
+    <div id="div-btn-resultado" class="row mt-2" style="display: none;">
+        <div class="col-md-8"></div>
+        <div class="d-grid gap-2mx-auto col-md-4">
+            <button class="btn btn-primary" onclick="calcular()">Calcular</button>
+        </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
 
     <script>
 
-        let objeto;
-        let tipo;
-        let tipoCalculo;
+        let poligono = null;
+        let tipoAreaPerimetro = null;
+        let tipoCalculo = null;
+
+        function exibeBtnResultado() {
+            if (
+                tipoCalculo === 'selecao-poligonos' && tipoAreaPerimetro && poligono ||
+                tipoCalculo === 'selecao-segundograu'
+            ) {
+                const btn = document.getElementById('div-btn-resultado');
+                if (btn) {
+                    btn.style.display = 'flex';
+                }
+            }
+        }
+
+
+        function ocultaBtnResultado() {
+            const btn = document.getElementById('div-btn-resultado');
+            if (btn) {
+                btn.style.display = 'none'
+            }
+        }
+
 
         function formatarResultado(valor) {
             return valor.toFixed(3).replace('.', ',');
@@ -276,8 +292,6 @@
             const valorA = parseFloat(document.getElementById("valora").value);
             const valorB = parseFloat(document.getElementById("valorb").value);
             const valorC = parseFloat(document.getElementById("valorc").value);
-
-            console.log(valorA, valorB, valorC);
 
             if (
                 !document.getElementById("valora").value || !document.getElementById("valorb").value || !document.getElementById("valorc").value ||
@@ -314,16 +328,41 @@
         function selecionaAtividade(selecao) {
             limparResultado();
             ocultarElementos();
+            ocultaBtnResultado();
+
             tipoCalculo = selecao;
-            document.getElementById('div-poligonos').style.display = 'none';
-            document.getElementById('div-trigonometria').style.display = 'none';
-            document.getElementById('div-seggrau').style.display = 'none';
+            const poligonos = document.getElementById(`btn-selecao-poligonos`);
+            poligonos.classList.remove("btn-info");
+            poligonos.classList.add("btn-primary");
+
+            const trigonometria = document.getElementById(`btn-selecao-trigonometria`);
+            trigonometria.classList.remove("btn-info");
+            trigonometria.classList.add("btn-primary");
+
+            const segundograu = document.getElementById(`btn-selecao-segundograu`);
+            segundograu.classList.remove("btn-info");
+            segundograu.classList.add("btn-primary");
+
+            const obj = document.getElementById(`btn-${selecao}`);
+            obj.classList.remove("btn-primary");
+            obj.classList.add("btn-info");
+
+            document.getElementById('selecao-poligonos').style.display = 'none';
+            document.getElementById('selecao-trigonometria').style.display = 'none';
+            document.getElementById('selecao-segundograu').style.display = 'none';
             document.getElementById(selecao).style.display = 'flex';
+
+            if (tipoCalculo === 'selecao-poligonos') {
+                atualizarAreaPerimetro();
+            }
+
+            exibeBtnResultado();
         }
 
         function limparResultado() {
             document.getElementById("resultadoUsuario").innerText = '';
             document.getElementById("detalhes").innerText = '';
+            document.getElementById('div-resultado').style.display = 'none';
         }
 
         function ocultarElementos() {
@@ -347,13 +386,36 @@
             document.getElementById('perimetro-decagono').style.display = 'none';
         }
 
-        function selecionar() {
-            tipo = document.getElementById("tipo").value;
-            objeto = document.getElementById("objeto").value;
+
+        function selecionarTipo(valor) {
+            tipoAreaPerimetro = valor;
+            const area = document.getElementById(`selecao-poligonos-area`);
+            area.classList.remove("btn-info");
+            area.classList.add("btn-primary");
+
+            const perimetro = document.getElementById(`selecao-poligonos-perimetro`);
+            perimetro.classList.remove("btn-info");
+            perimetro.classList.add("btn-primary");
+
+            const objeto = document.getElementById(`selecao-poligonos-${tipoAreaPerimetro}`);
+            objeto.classList.remove("btn-primary");
+            objeto.classList.add("btn-info");
+            atualizarAreaPerimetro();
+        }
+
+
+        function selecionarObjeto(valor, titulo) {
+            poligono = valor;
+            document.getElementById('dropdown-selecao-poligonos').innerText = titulo
+            atualizarAreaPerimetro();
+        }
+
+        function atualizarAreaPerimetro() {
             limparResultado();
             ocultarElementos();
-            if (tipo && objeto) {
-                document.getElementById(tipo + '-' + objeto).style.display = 'block';
+            exibeBtnResultado();
+            if (tipoAreaPerimetro && poligono) {
+                document.getElementById(tipoAreaPerimetro + '-' + poligono).style.display = 'block';
             }
         }
 
@@ -473,9 +535,9 @@
         }
         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         function perimetroTriangulo() {
-            const lado1 = parseFloat(document.getElementById("lado1-" + objeto).value);
-            const lado2 = parseFloat(document.getElementById("lado2-" + objeto).value);
-            const lado3 = parseFloat(document.getElementById("lado3-" + objeto).value);
+            const lado1 = parseFloat(document.getElementById("lado1-" + poligono).value);
+            const lado2 = parseFloat(document.getElementById("lado2-" + poligono).value);
+            const lado3 = parseFloat(document.getElementById("lado3-" + poligono).value);
             if (!lado1 || !lado2 || !lado3) {
                 document.getElementById("resultadoUsuario").innerText = `Voce precisa informar todos os lados do triangulo`;
             } else {
@@ -574,56 +636,56 @@
         }
 
         function calcularAreaPerimetro() {
-            if (objeto === 'triangulo') {
-                if (tipo === 'area') {
+            if (poligono === 'triangulo') {
+                if (tipoAreaPerimetro === 'area') {
                     areaTriangulo();
                 } else {
                     perimetroTriangulo();
                 }
-            } else if (objeto === 'retangulo') {
-                if (tipo === 'area') {
+            } else if (poligono === 'retangulo') {
+                if (tipoAreaPerimetro === 'area') {
                     areaRetangulo();
                 } else {
                     perimetroRetangulo();
                 }
-            } else if (objeto === 'quadrado') {
-                if (tipo === 'area') {
+            } else if (poligono === 'quadrado') {
+                if (tipoAreaPerimetro === 'area') {
                     areaQuadrado();
                 } else {
                     perimetroQuadrado();
                 }
-            } else if (objeto === 'pentagono') {
-                if (tipo === 'area') {
+            } else if (poligono === 'pentagono') {
+                if (tipoAreaPerimetro === 'area') {
                     areaPentagono();
                 } else {
                     perimetroPentagono();
                 }
-            } else if (objeto === 'hexagono') {
-                if (tipo === 'area') {
+            } else if (poligono === 'hexagono') {
+                if (tipoAreaPerimetro === 'area') {
                     areaHexagono();
                 } else {
                     perimetroHexagono();
                 }
-            } else if (objeto === 'heptagono') {
-                if (tipo === 'area') {
+            } else if (poligono === 'heptagono') {
+                if (tipoAreaPerimetro === 'area') {
                     areaHeptagono();
                 } else {
                     perimetroHeptagono();
                 }
-            } else if (objeto === 'octogono') {
-                if (tipo === 'area') {
+            } else if (poligono === 'octogono') {
+                if (tipoAreaPerimetro === 'area') {
                     areaOctogono();
                 } else {
                     perimetroOctogono();
                 }
-            } else if (objeto === 'eneagono') {
-                if (tipo === 'area') {
+            } else if (poligono === 'eneagono') {
+                if (tipoAreaPerimetro === 'area') {
                     areaEneagono();
                 } else {
                     perimetroEneagono();
                 }
-            } else if (objeto === 'decagono') {
-                if (tipo === 'area') {
+            } else if (poligono === 'decagono') {
+                if (tipoAreaPerimetro === 'area') {
                     areaDecagono();
                 } else {
                     perimetroDecagono();
@@ -632,13 +694,17 @@
         }
 
         function calcular() {
-            if (tipoCalculo === 'div-seggrau') {
+            document.getElementById('div-resultado').style.display = 'block';
+
+            if (tipoCalculo === 'selecao-segundograu') {
                 equacaoSegundoGrau()
-            } else if (tipoCalculo === 'div-poligonos') {
+            } else if (tipoCalculo === 'selecao-poligonos') {
                 calcularAreaPerimetro();
             }
         }
     </script>
+
+
 </body>
 
 </html>
