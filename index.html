@@ -13,6 +13,10 @@
     <title>Calculadora Matematica</title>
 
     <style>
+        .detalhes {
+            color: rgb(126, 126, 126);
+        }
+
         .body-page {
             background-color: rgb(243, 243, 243);
         }
@@ -25,7 +29,7 @@
 
     <div class="alert alert-primary mt-2">
         <h1 class="text-center">CALCULADORA MATEMÁTICA</h1>
-        <span>faça cálculos de perimetros e areas de poligonos regulares, equações de 2° grau,
+        <span>faça cálculos de perímetros e areas de poligonos regulares, equações de 2° grau,
             relações trigonométricas e
             muito
             mais</span>
@@ -37,7 +41,7 @@
     <div class="btn-group mt-2 mb-2" role="grupoEscolhaPrincipal" aria-label="Basic example">
         <button id="btn-selecao-poligonos" type="button" class="btn btn-primary"
             onclick="selecionaAtividade('selecao-poligonos')">Area e
-            Perimetro</button>
+            Perímetro</button>
         <button id="btn-selecao-trigonometria" type="button" class="btn btn-primary"
             onclick="selecionaAtividade('selecao-trigonometria')">Razões
             Trigonométricas</button>
@@ -106,135 +110,350 @@
         <div class="card-body">
             <div class="row">
                 <div class="form-group">
-                    <label for="base">Valor da Base</label>
-                    <input type="email" class="form-control" id="base" placeholder="informe a base">
+                    <label for="base">Valor da Base:</label>
+                    <input type="tel" class="form-control" id="base" placeholder="informe a base" min="-1000">
                     <div class="mt-2"></div>
-                    <label for="altura">Valor da Altura</label>
-                    <input type="email" class="form-control" id="altura" placeholder="informe a altura">
+                    <label for="altura">Valor da Altura:</label>
+                    <input type="tel" class="form-control" id="altura" placeholder="informe a altura" min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AREA RETANGULO-->
+    <div class="card mt-2" id="area-retangulo" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do retângulo
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="base">Valor da Base:</label>
+                    <input type="tel" class="form-control" id="base-retangulo" placeholder="informe a base" min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="altura">Valor da Altura:</label>
+                    <input type="tel" class="form-control" id="altura-retangulo" placeholder="informe a altura"
+                        min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AREA QUADRADO-->
+    <div class="card mt-2" id="area-quadrado" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do quadrado
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="base">Valor do Lado:</label>
+                    <input type="tel" class="form-control" id="lado-quadrado" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AREA PENTAGONO-->
+    <div class="card mt-2" id="area-pentagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do pentágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do Lado:</label>
+                    <input type="tel" class="form-control" id="lado-pentagono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="apotema">Valor da Apótema:</label>
+                    <input type="tel" class="form-control" id="apotema-pentagono" placeholder="informe a apótema"
+                        min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AREA HEXAGONO-->
+    <div class="card mt-2" id="area-hexagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do hexágon
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do Lado:</label>
+                    <input type="tel" class="form-control" id="lado-hexagono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="apotema">Valor da Apótema:</label>
+                    <input type="tel" class="form-control" id="apotema-hexagono" placeholder="informe a apótema"
+                        min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AREA HEPTAGONO-->
+    <div class="card mt-2" id="area-heptagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do heptágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do Lado:</label>
+                    <input type="tel" class="form-control" id="lado-heptagono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="apotema">Valor da Apótema:</label>
+                    <input type="tel" class="form-control" id="apotema-heptagono" placeholder="informe a apótema"
+                        min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AREA OCTOGONO-->
+    <div class="card mt-2" id="area-octogono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do octógono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do Lado:</label>
+                    <input type="tel" class="form-control" id="lado-octogono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="apotema">Valor da Apótema:</label>
+                    <input type="tel" class="form-control" id="apotema-octogono" placeholder="informe a apótema"
+                        min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AREA ENEAGONO-->
+    <div class="card mt-2" id="area-eneagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do eneágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do Lado:</label>
+                    <input type="tel" class="form-control" id="lado-eneagono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="apotema">Valor da Apótema:</label>
+                    <input type="tel" class="form-control" id="apotema-eneagono" placeholder="informe a apótema"
+                        min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--AREA DECAGONO-->
+    <div class="card mt-2" id="area-decagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Área do decágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do Lado:</label>
+                    <input type="tel" class="form-control" id="lado-decagono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="apotema">Valor da Apótema:</label>
+                    <input type="tel" class="form-control" id="apotema-decagono" placeholder="informe a apótema"
+                        min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--PERIMETROS-->
+    <!--PERIMETRO TRIANGULO-->
+    <div class="card mt-2" id="perimetro-triangulo" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perimetro do triângulo
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado01">Valor do Lado 01:</label>
+                    <input type="tel" class="form-control" id="lado1-triangulo" placeholder="informe o lado"
+                        min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="lado02">Valor do Lado 02:</label>
+                    <input type="tel" class="form-control" id="lado2-triangulo" placeholder="informe o lado"
+                        min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="lado03">Valor do Lado 03:</label>
+                    <input type="tel" class="form-control" id="lado3-triangulo" placeholder="informe o lado"
+                        min="-1000">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--PERIMETRO QUADRADO-->
+    <div class="card mt-2" id="perimetro-quadrado" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perímetro do quadrado
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do Lado:</label>
+                    <input type="tel" class="form-control" id="lado1-quadrado" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pt-20 col" id="perimetro-quadrado" style="display: none;">
+        <span>Valor dos Lados:</span><input id="lado1-quadrado" type="number">
+    </div>
+    <!--PERIMETRO RETANGULO-->
+    <div class="card mt-2" id="perimetro-retangulo" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perímetro do retângulo
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do lado Maior:</label>
+                    <input type="tel" class="form-control" id="lado1-retangulo" placeholder="informe o lado maior"
+                        min="-1000">
+                    <div class="mt-2"></div>
+                    <label for="apotema">Valor do lado Menor:</label>
+                    <input type="tel" class="form-control" id="lado2-retangulo" placeholder="informe o lado menor"
+                        min="-1000">
                 </div>
             </div>
         </div>
     </div>
 
-    <!--AREA RETANGULO-->
-    <div class="pt-20 col" id="area-retangulo" style="display: none;">
-        <span>Valor da Base:</span><input id="base-retangulo" type="number">
-        <div class="pt-20"></div>
-        <span>Valor da Altura:</span><input id="altura-retangulo" type="number">
+    <!--PERIMETRO PENTAGONO-->
+    <div class="card mt-2" id="perimetro-pentagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perímetro do pentágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do lado:</label>
+                    <input type="tel" class="form-control" id="lado1-pentagono" placeholder="informe o lado "
+                        min="-1000">
+                    <div class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--PERIMETRO HEXAGONO-->
+    <div class="card mt-2" id="perimetro-hexagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perímetro do hexágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do lado:</label>
+                    <input type="tel" class="form-control" id="lado1-hexagono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!--AREA QUADRADO-->
-    <div class="pt-20 col" id="area-quadrado" style="display: none;">
-        <span>Valor do Lado:</span><input id="lado-quadrado" type="number">
-        <div class="pt-20"></div>
+    <!--PERIMETRO HEPTAGONO-->
+    <div class="card mt-2" id="perimetro-heptagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perímetro do heptágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do lado:</label>
+                    <input type="tel" class="form-control" id="lado1-heptagono" placeholder="informe o lado"
+                        min="-1000">
+                    <div class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--PERIMETRO OCTOGONO-->
+    <div class="card mt-2" id="perimetro-octogono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perímetro do octôgono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do lado:</label>
+                    <input type="tel" class="form-control" id="lado1-octogono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--PERIMETRO ENEAGONO-->
+    <div class="card mt-2" id="perimetro-eneagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perímetro do eneágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do lado:</label>
+                    <input type="tel" class="form-control" id="lado1-eneagono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!--AREA PENTAGONO-->
-    <div class="pt-20 col" id="area-pentagono" style="display: none;">
-        <span>Valor do Lado:</span><input id="lado-pentagono" type="number">
-        <div class="pt-20"></div>
-        <span>Valor da Apótema:</span><input id="apotema-pentagono" type="number">
+    <!--PERIMETRO DECAGONO-->
+    <div class="card mt-2" id="perimetro-decagono" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            Perímetro do decágono
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="form-group">
+                    <label for="lado">Valor do lado:</label>
+                    <input type="tel" class="form-control" id="lado1-decagono" placeholder="informe o lado" min="-1000">
+                    <div class="mt-2"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    <!--AREA HEXAGONO-->
-    <div class="pt-20 col" id="area-hexagono" style="display: none;">
-        <span>Valor do Lado:</span><input id="lado-hexagono" type="number">
-        <div class="pt-20"></div>
-        <span>Valor da Apótema:</span><input id="apotema-hexagono" type="number">
-    </div>
-    <!--AREA HEPTAGONO-->
-    <div class="pt-20 col" id="area-heptagono" style="display: none;">
-        <span>Valor do Lado:</span><input id="lado-heptagono" type="number">
-        <div class="pt-20"></div>
-        <span>Valor da Apótema:</span><input id="apotema-hepatgono" type="number">
-    </div>
-    <!--AREA OCTOGONO-->
-    <div class="pt-20 col" id="area-octogono" style="display: none;">
-        <span>Valor do Lado:</span><input id="lado-octogono" type="number">
-        <div class="pt-20"></div>
-        <span>Valor da Apótema:</span><input id="apotema-octogono" type="number">
-    </div>
-    <!--AREA ENEAGONO-->
-    <div class="pt-20 col" id="area-eneagono" style="display: none;">
-        <span>Valor do Lado:</span><input id="lado-eneagono" type="number">
-        <div class="pt-20"></div>
-        <span>Valor da Apótema:</span><input id="apotema-eneagono" type="number">
-    </div>
-    <!--AREA DECAGONO-->
-    <div class="pt-20 col" id="area-decagono" style="display: none;">
-        <span>Valor do Lado:</span><input id="lado-decagono" type="number">
-        <div class="pt-20"></div>
-        <span>Valor da Apótema:</span><input id="apotema-decagono" type="number">
-    </div>
-
-    <!--PERIMETROS-->
-    <div class="pt-20 col" id="perimetro-triangulo" style="display: none;">
-        <span>Valor do Lado 01:</span><input id="lado1-triangulo" type="number">
-        <div class="pt-20"></div>
-        <span>Valor do Lado 02:</span><input id="lado2-triangulo" type="number">
-        <div class="pt-20"></div>
-        <span>Valor do Lado 03:</span><input id="lado3-triangulo" type="number">
-    </div>
-
-    <div class="pt-20 col" id="perimetro-quadrado" style="display: none;">
-        <span>Valor dos Lados:</span><input id="lado1-quadrado" type="number">
-    </div>
-
-    <div class="pt-20 col" id="perimetro-retangulo" style="display: none;">
-        <span>Valor do Lado Maior:</span><input id="lado1-retangulo" type="number">
-        <div class="pt-20"></div>
-        <span>Valor do Lado Menor:</span><input id="lado2-retangulo" type="number">
-    </div>
-
-    <div class="pt-20 col" id="perimetro-pentagono" style="display: none;">
-        <span>Valor dos Lados:</span><input id="lado1-pentagono" type="number">
-    </div>
-
-    <div class="pt-20 col" id="perimetro-hexagono" style="display: none;">
-        <span>Valor dos Lados:</span><input id="lado1-hexagono" type="number">
-    </div>
-
-    <div class="pt-20 col" id="perimetro-heptagono" style="display: none;">
-        <span>Valor dos Lados:</span><input id="lado1-heptagono" type="number">
-    </div>
-
-    <div class="pt-20 col" id="perimetro-octogono" style="display: none;">
-        <span>Valor dos Lados:</span><input id="lado1-octogono" type="number">
-    </div>
-
-    <div class="pt-20 col" id="perimetro-eneagono" style="display: none;">
-        <span>Valor dos Lados:</span><input id="lado1-eneagono" type="number">
-    </div>
-    <div class="pt-20 col" id="perimetro-decagono" style="display: none;">
-        <span>Valor dos Lados:</span><input id="lado1-decagono" type="number">
-    </div>
-
-
     <!-------------------->
 
     <div id="selecao-trigonometria" class="alert alert-warning" style="display: none;">AQUI vão as coisas de relaçoes
         trigonométricas em breve...🙏
     </div>
 
-
-    <div class="row" id="selecao-segundograu" style="display: none;">
-        <div class="col pr-20">
-            <span>Valor de A</span>
-            <div class="row">
-                <input type="tel" id="valora" min="-1000">
-                <span>X²</span>
-            </div>
+    <div class="card mt-2" id="selecao-segundograu" style="display: none;">
+        <div class="card-header bg-primary text-light">
+            equação de 2° grau
         </div>
-        <div class="col pr-20">
-            <span>Valor de B:</span>
+        <div class="card-body">
             <div class="row">
-                <input type="tel" id="valorb" min="-1000">
-                <span>X</span>
-            </div>
-        </div>
-        <div class="col">
-            <span>Valor de C:</span>
-            <div class="row">
-                <input type="tel" id="valorc" min="-1000">
+                <div class="form-group">
+                    <label for="valora">Valor de A:</label>
+                    <div class="row align-items-center">
+                        <div class="col col-10">
+                            <input type="tel" class="form-control" id="valora" placeholder="informe o valor de A"
+                                min="-1000">
+                        </div>
+                        <div class="col col-2">
+                            <span class="text-center">X²</span>
+                        </div>
+                    </div>
+                    <div class="mt-2"></div>
+                    <label for="valorb">Valor de B:</label>
+                    <div class="row align-items-center">
+                        <div class="col col-10">
+                            <input type="tel" class="form-control" id="valorb" placeholder="informe o valor de B"
+                                min="-1000">
+                        </div>
+                        <div class="col col-2">
+                            <span class="text-center">X</span>
+                        </div>
+                    </div>
+                    <div class="mt-2"></div>
+                    <label for="valorc">Valor de C:</label>
+                    <input type="tel" class="form-control" id="valorc" placeholder="informe o valor de C" min="-1000">
+                </div>
             </div>
         </div>
     </div>
@@ -242,9 +461,12 @@
     <div id="div-resultado" class="alert alert-success mt-2" style="display: none;">
         <span id="resultadoUsuario"></span>
     </div>
-    <div class="detalhes">
+
+    <div id="div-detalhes" class="detalhes alert alert-secondary" style="display: none;">
         <span id="detalhes"></span>
     </div>
+
+
 
     <div id="div-btn-resultado" class="row mt-2" style="display: none;">
         <div class="col-md-8"></div>
@@ -257,7 +479,12 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
 
+
+
     <script>
+        const erro = 'erro';
+        const sucesso = 'sucesso';
+        const alerta = 'alerta';
 
         let poligono = null;
         let tipoAreaPerimetro = null;
@@ -288,6 +515,23 @@
             return valor.toFixed(3).replace('.', ',');
         }
 
+        function exibeResultado(resultado, tipo) {
+            limparResultado();
+            document.getElementById("resultadoUsuario").innerText = resultado;
+
+            let classe = 'alert-success';
+            if (tipo === alerta) {
+                classe = 'alert-warning';
+            } else if (tipo === erro) {
+                classe = 'alert-danger';
+            }
+
+            const obj = document.getElementById("div-resultado");
+            obj.style.display = 'block';
+            obj.classList.add(classe);
+
+        }
+
         function equacaoSegundoGrau() {
             const valorA = parseFloat(document.getElementById("valora").value);
             const valorB = parseFloat(document.getElementById("valorb").value);
@@ -296,10 +540,10 @@
             if (
                 !document.getElementById("valora").value || !document.getElementById("valorb").value || !document.getElementById("valorc").value ||
                 valorA === null || valorA === undefined || valorB === null || valorB === undefined || valorC === null || valorC === undefined) {
-                document.getElementById("resultadoUsuario").innerText = `você precisa informar os valores de A, B e C`
+                exibeResultado(`você precisa informar os valores de A, B e C`, erro);
             } else {
                 if (valorA === 0) {
-                    document.getElementById("resultadoUsuario").innerText = `O valor de "a" não pode ser igual a zero!`
+                    exibeResultado(`O valor de "a" não pode ser igual a zero!`, erro);
                 } else {
                     const delta = (valorB * valorB) - (4 * valorA * valorC);
                     const X1 = ((-1 * valorB) + Math.sqrt(delta)) / (2 * valorA);
@@ -311,15 +555,18 @@
                     const equacao = `${valorA}X² ${operadorB}${valorB}X ${operadorC}${valorC}`;
 
                     if (delta < 0) {
-                        document.getElementById("resultadoUsuario").innerText = `Delta menor que zero. Não existem raizes reais para a equação ${equacao}`
+                        exibeResultado(`Delta menor que zero. Não existem raizes reais para a equação ${equacao}`, alerta);
                     } else if (delta === 0) {
-                        document.getElementById("resultadoUsuario").innerText = `O valor do ponto que resolve a equação ${equacao} é X1=${formatarResultado(X1)}`;
+                        exibeResultado(`O valor do ponto que resolve a equação ${equacao} é X1=${formatarResultado(X1)}`, sucesso);
+                        document.getElementById("resultadoUsuario").innerText = ``;
                     } else {
-                        document.getElementById("resultadoUsuario").innerText = `Os valores dos pontos que resolvem a equação ${equacao} são X1=${formatarResultado(X1)} e X2=${formatarResultado(X2)}`;
+                        exibeResultado(`Os valores dos pontos que resolvem a equação ${equacao} são X1=${formatarResultado(X1)} e X2=${formatarResultado(X2)}`, sucesso);
                     }
 
-                    const detalhes = `\nDelta = b² - 4.a.c\nDelta = (${valorB})² - 4.(${valorA}).(${valorC})\nDelta = ${delta}\n\n`
+                    const detalhes = `Delta = b² - 4.a.c\nDelta = (${valorB})² - 4.(${valorA}).(${valorC})\nDelta = ${delta}`
+                    document.getElementById("div-detalhes").style.display = 'block';
                     document.getElementById("detalhes").innerText = detalhes;
+
                 }
 
             }
@@ -343,14 +590,19 @@
             segundograu.classList.remove("btn-info");
             segundograu.classList.add("btn-primary");
 
+
+
             const obj = document.getElementById(`btn-${selecao}`);
             obj.classList.remove("btn-primary");
             obj.classList.add("btn-info");
 
+            document.getElementById("")
             document.getElementById('selecao-poligonos').style.display = 'none';
             document.getElementById('selecao-trigonometria').style.display = 'none';
             document.getElementById('selecao-segundograu').style.display = 'none';
             document.getElementById(selecao).style.display = 'flex';
+
+            document.getElementById("div-detalhes").style.display = 'none';
 
             if (tipoCalculo === 'selecao-poligonos') {
                 atualizarAreaPerimetro();
@@ -362,7 +614,13 @@
         function limparResultado() {
             document.getElementById("resultadoUsuario").innerText = '';
             document.getElementById("detalhes").innerText = '';
-            document.getElementById('div-resultado').style.display = 'none';
+            document.getElementById('div-resultado')
+            const resultado = document.getElementById("div-resultado");
+            resultado.classList.remove("alert-success");
+            resultado.classList.remove("alert-warning");
+            resultado.classList.remove("alert-danger");
+            resultado.style.display = 'none';
+            document.getElementById("div-detalhes").style.display = 'none';
         }
 
         function ocultarElementos() {
@@ -426,7 +684,7 @@
             if (!base || !altura) {
                 document.getElementById("resultadoUsuario").innerText = `Voce precisa informar a base e a altura do triângulo`;
             } else {
-                const resultadoTriangulo = base * altura / 2;
+                const resultadoTriangulo = (base * altura) / 2;
                 document.getElementById("resultadoUsuario").innerText = `O resultado da area do triângulo de base = ${base} e altura = ${altura} é de ${resultadoTriangulo}`;
             }
         }
@@ -463,7 +721,7 @@
             if (!ladoPentagono || !apotemaPentagono) {
                 document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do pentágono`;
             } else {
-                const resultadoPentagono = 5 * ladoPentagono * apotemaPentagono;
+                const resultadoPentagono = (5 * ladoPentagono * apotemaPentagono) / 2;
                 document.getElementById("resultadoUsuario").innerText = `O resultado da area do pentágono de lado = ${ladoPentagono} e apótema = ${apotemaPentagono} é de ${resultadoPentagono}`;
             }
 
@@ -473,10 +731,10 @@
             const ladoHexagono = parseFloat(document.getElementById("lado-hexagono").value);
             const apotemaHexagono = parseFloat(document.getElementById("apotema-hexagono").value);
 
-            if (!ladoHexagono || !apotemaHexagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do hexágono`;
+            if (!ladoHexagono) {
+                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado do hexágono`;
             } else {
-                const resultadoHexagono = 6 * ladoHexagono * apotemaHexagono / 2;
+                const resultadoHexagono = ((6 * ladoHexagono) * apotemaHexagono) / 2;
                 document.getElementById("resultadoUsuario").innerText = `O resultado da area do hexágono de lado = ${ladoHexagono} e apótema = ${apotemaHexagono} é de ${resultadoHexagono}`;
             }
 
@@ -484,12 +742,12 @@
 
         function areaHeptagono() {
             const ladoHeptagono = parseFloat(document.getElementById("lado-heptagono").value);
-            const apotemaHeptagono = parseFloat(document.getElementById("apotema-hepatgono").value);
+            const apotemaHeptagono = parseFloat(document.getElementById("apotema-heptagono").value);
 
             if (!ladoHeptagono || !apotemaHeptagono) {
                 document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do heptágono`;
             } else {
-                const resultadoHeptagono = 7 / 2 * ladoHeptagono * apotemaHeptagono;
+                const resultadoHeptagono = ((7 * ladoHeptagono) * apotemaHeptagono) / 2;
                 document.getElementById("resultadoUsuario").innerText = `O resultado da area do heptágono de lado = ${ladoHeptagono} e apótema = ${apotemaHeptagono} é de ${resultadoHeptagono}`;
             }
 
@@ -502,7 +760,7 @@
             if (!ladoOctogono || !apotemaOctogono) {
                 document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do octógono`;
             } else {
-                const resultadoOctogono = 4 * ladoOctogono * apotemaOctogono;
+                const resultadoOctogono = ((8 * ladoOctogono) * apotemaOctogono) / 2;
                 document.getElementById("resultadoUsuario").innerText = `O resultado da area do octógono de lado = ${ladoOctogono} e apótema = ${apotemaOctogono} é de ${resultadoOctogono}`;
             }
 
@@ -515,7 +773,7 @@
             if (!ladoEneagono || !apotemaEneagono) {
                 document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do eneágono`;
             } else {
-                const resultadoEneagono = ladoEneagono * 9 / 2 * apotemaEneagono;
+                const resultadoEneagono = ((9 * ladoEneagono) * apotemaEneagono) / 2;
                 document.getElementById("resultadoUsuario").innerText = `O resultado da area do eneágono de lado = ${ladoEneagono} e apótema = ${apotemaEneagono} é de ${resultadoEneagono}`;
             }
 
@@ -528,7 +786,7 @@
             if (!ladoDecagono || !apotemaDecagono) {
                 document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do decágono`;
             } else {
-                const resultadoDecagono = 5 * ladoDecagono * apotemaDecagono;
+                const resultadoDecagono = ((10 * ladoDecagono) * apotemaDecagono) / 2;
                 document.getElementById("resultadoUsuario").innerText = `O resultado da area do dácagono de lado = ${ladoDecagono} e apótema = ${apotemaDecagono} é de ${resultadoDecagono}`;
             }
 
@@ -694,7 +952,7 @@
         }
 
         function calcular() {
-            document.getElementById('div-resultado').style.display = 'block';
+            document.getElementById("div-resultado").style.display = 'block';
 
             if (tipoCalculo === 'selecao-segundograu') {
                 equacaoSegundoGrau()
