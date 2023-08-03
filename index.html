@@ -682,10 +682,10 @@
             const altura = parseFloat(document.getElementById("altura").value);
 
             if (!base || !altura) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar a base e a altura do triângulo`;
+                exibeResultado(`Você precisa informar a base e a altura do triângulo`, erro)
             } else {
                 const resultadoTriangulo = (base * altura) / 2;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do triângulo de base = ${base} e altura = ${altura} é de ${resultadoTriangulo}`;
+                exibeResultado(`O resultado da área do triângulo de base = ${base} e altura = ${altura} é de ${resultadoTriangulo}`, sucesso);
             }
         }
 
@@ -694,10 +694,11 @@
             const alturaRetangulo = parseFloat(document.getElementById("altura-retangulo").value);
 
             if (!baseRetangulo || !alturaRetangulo) {
+                exibeResultado(`Você precisa informar a base e a altura do retangulo`, erro);
                 document.getElementById("resultadoUsuario").innerText = `Voce precisa informar a base e a altura do retangulo`;
             } else {
                 const resultadoRetangulo = baseRetangulo * alturaRetangulo;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do retangulo de base = ${baseRetangulo} e altura = ${alturaRetangulo} é de ${resultadoRetangulo}`;
+                exibeResultado(`O resultado da área do triângulo de base = ${baseRetangulo} e altura = ${alturaRetangulo} é de ${resultadoRetangulo}`, sucesso);
             }
 
         }
@@ -707,10 +708,10 @@
             const resultadoQuadrado = ladoQuadrado * ladoQuadrado;
 
             if (!ladoQuadrado) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado do quadrado`;
+                exibeResultado(`Você precisa informar a base e a altura do quadrado`, erro);
             } else {
                 const resultadoQuadrado = ladoQuadrado * ladoQuadrado;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do quadrado de lado = ${ladoQuadrado} é de ${resultadoQuadrado}`;
+                exibeResultado(`O resultado da área do quadrado de lado = ${ladoQuadrado} é de ${resultadoQuadrado}`, sucesso);
             }
         }
 
@@ -719,10 +720,10 @@
             const apotemaPentagono = parseFloat(document.getElementById("apotema-pentagono").value);
 
             if (!ladoPentagono || !apotemaPentagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do pentágono`;
+                exibeResultado(`Você precisa informar o lado e a apótema do pentágono`, erro);
             } else {
                 const resultadoPentagono = (5 * ladoPentagono * apotemaPentagono) / 2;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do pentágono de lado = ${ladoPentagono} e apótema = ${apotemaPentagono} é de ${resultadoPentagono}`;
+                exibeResultado(`O resultado da área do pentágono de lado = ${ladoPentagono} e apótema = ${apotemaPentagono} é de ${resultadoPentagono}`, sucesso);
             }
 
         }
@@ -732,10 +733,10 @@
             const apotemaHexagono = parseFloat(document.getElementById("apotema-hexagono").value);
 
             if (!ladoHexagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado do hexágono`;
+                exibeResultado(`Você precisa informar o lado do hexágono`, erro);
             } else {
                 const resultadoHexagono = ((6 * ladoHexagono) * apotemaHexagono) / 2;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do hexágono de lado = ${ladoHexagono} e apótema = ${apotemaHexagono} é de ${resultadoHexagono}`;
+                exibeResultado(`O resultado da área do hexágono de lado = ${ladoHexagono} e apótema = ${apotemaHexagono} é de ${resultadoHexagono}`, sucesso);
             }
 
         }
@@ -745,10 +746,11 @@
             const apotemaHeptagono = parseFloat(document.getElementById("apotema-heptagono").value);
 
             if (!ladoHeptagono || !apotemaHeptagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do heptágono`;
+                exibeResultado(`Você precisa informar o lado e a apótema do heptágono`, erro);
+
             } else {
                 const resultadoHeptagono = ((7 * ladoHeptagono) * apotemaHeptagono) / 2;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do heptágono de lado = ${ladoHeptagono} e apótema = ${apotemaHeptagono} é de ${resultadoHeptagono}`;
+                exibeResultado(`O resultado da área do heptágono de lado = ${ladoHeptagono} e apótema = ${apotemaHeptagono} é de ${resultadoHeptagono}`, sucesso);
             }
 
         }
@@ -758,10 +760,10 @@
             const apotemaOctogono = parseFloat(document.getElementById("apotema-octogono").value);
 
             if (!ladoOctogono || !apotemaOctogono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do octógono`;
+                exibeResultado(`Você precisa informar o lado e a apótema do octógono`, erro);
             } else {
                 const resultadoOctogono = ((8 * ladoOctogono) * apotemaOctogono) / 2;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do octógono de lado = ${ladoOctogono} e apótema = ${apotemaOctogono} é de ${resultadoOctogono}`;
+                exibeResultado(`O resultado da área do octógono de lado = ${ladoOctogono} e apótema = ${apotemaOctogono} é de ${resultadoOctogono}`, sucesso);
             }
 
         }
@@ -771,10 +773,10 @@
             const apotemaEneagono = parseFloat(document.getElementById("apotema-eneagono").value);
 
             if (!ladoEneagono || !apotemaEneagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do eneágono`;
+                exibeResultado(`Você precisa informar o lado e a apótema do eneágono`, erro);
             } else {
                 const resultadoEneagono = ((9 * ladoEneagono) * apotemaEneagono) / 2;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do eneágono de lado = ${ladoEneagono} e apótema = ${apotemaEneagono} é de ${resultadoEneagono}`;
+                exibeResultado(`O resultado da área do eneágono de lado = ${ladoEneagono} e apótema = ${apotemaEneagono} é de ${resultadoEneagono}`, sucesso);
             }
 
         }
@@ -784,10 +786,10 @@
             const apotemaDecagono = parseFloat(document.getElementById("apotema-decagono").value);
 
             if (!ladoDecagono || !apotemaDecagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o lado e a apótema do decágono`;
+                exibeResultado(`Você precisa informar o lado e a apótema do decágono`, erro);
             } else {
                 const resultadoDecagono = ((10 * ladoDecagono) * apotemaDecagono) / 2;
-                document.getElementById("resultadoUsuario").innerText = `O resultado da area do dácagono de lado = ${ladoDecagono} e apótema = ${apotemaDecagono} é de ${resultadoDecagono}`;
+                exibeResultado(`O resultado da área do dácagono de lado = ${ladoDecagono} e apótema = ${apotemaDecagono} é de ${resultadoDecagono}`, sucesso);
             }
 
         }
@@ -797,10 +799,10 @@
             const lado2 = parseFloat(document.getElementById("lado2-" + poligono).value);
             const lado3 = parseFloat(document.getElementById("lado3-" + poligono).value);
             if (!lado1 || !lado2 || !lado3) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar todos os lados do triangulo`;
+                exibeResultado(`Você precisa informar todos os lados do triangulo`, erro)
             } else {
                 const resultadoPerimetroTriangulo = lado1 + lado2 + lado3;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do triangulo que tem o primeiro lado = ${lado1},o segundo lado = ${lado2},e o terceiro lado = ${lado3} é de ${resultadoPerimetroTriangulo}`;
+                exibeResultado(`O resultado do perímetro do triangulo que tem o primeiro lado = ${lado1},o segundo lado = ${lado2},e o terceiro lado = ${lado3} é de ${resultadoPerimetroTriangulo}`, sucesso);
             }
         }
 
@@ -809,10 +811,10 @@
             const ladoMaior = parseFloat(document.getElementById("lado2-retangulo").value);
 
             if (!ladoMenor || !ladoMaior) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar os lados do retangulo`;
+                exibeResultado(`Você precisa informar os lados do retangulo`, erro)
             } else {
                 const resultadoPerimetroRetangulo = 2 * ladoMenor + ladoMaior * 2;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do retangulo de lado menor = ${ladoMenor} e lado maior = ${ladoMaior} é de ${resultadoPerimetroRetangulo}`;
+                exibeResultado(`O resultado do perímetro do retangulo de lado menor = ${ladoMenor} e lado maior = ${ladoMaior} é de ${resultadoPerimetroRetangulo}`, sucesso);
             }
         }
 
@@ -820,10 +822,10 @@
             const ladoquadrado = parseFloat(document.getElementById("lado1-quadrado").value)
 
             if (!ladoquadrado) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do quadrado`;
+                exibeResultado(`Você precisa informar o valor do lado do quadrado`, erro)
             } else {
                 const resultadoPerimetroQuadrado = 4 * ladoquadrado;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do quadrado de lado = ${ladoquadrado} é de ${resultadoPerimetroQuadrado}`;
+                exibeResultado(`O resultado do perímetro do quadrado de lado = ${ladoquadrado} é de ${resultadoPerimetroQuadrado}`, sucesso);
             }
         }
 
@@ -831,10 +833,10 @@
             const ladopentagono = parseFloat(document.getElementById("lado1-pentagono").value)
 
             if (!ladopentagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do pentágono`;
+                exibeResultado(`Você precisa informar o valor do lado do pentágono`, erro)
             } else {
                 const resultadoPerimetroPentagono = 5 * ladopentagono;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do pentágono de lado = ${ladopentagono} é de ${resultadoPerimetroPentagono}`;
+                exibeResultado(`O resultado do perímetro do pentágono de lado = ${ladopentagono} é de ${resultadoPerimetroPentagono}`, sucesso);
             }
         }
 
@@ -842,10 +844,11 @@
             const ladohexagono = parseFloat(document.getElementById("lado1-hexagono").value)
 
             if (!ladohexagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do hexágono`;
+                exibeResultado(`Você precisa informar o valor do lado do hexágono`, erro)
             } else {
                 const resultadoPerimetroHexagono = 6 * ladohexagono;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do hexágono de lado = ${ladohexagono} é de ${resultadoPerimetroHexagono}`;
+                exibeResultado(`O resultado do perímetro do hexágono de lado = ${ladohexagono} é de ${resultadoPerimetroHexagono}`, sucesso);
+
             }
         }
 
@@ -853,10 +856,11 @@
             const ladoheptagono = parseFloat(document.getElementById("lado1-heptagono").value)
 
             if (!ladoheptagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do heptágono`;
+                exibeResultado(`Você precisa informar o valor do lado do heptágono`, erro)
             } else {
                 const resultadoPerimetroHeptagono = 7 * ladoheptagono;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do heptágono de lado = ${ladoheptagono} é de ${resultadoPerimetroHeptagono}`;
+                exibeResultado(`O resultado do perímetro do heptágono de lado = ${ladoheptagono} é de ${resultadoPerimetroHeptagono}`, sucesso);
+
             }
         }
 
@@ -864,10 +868,11 @@
             const ladooctogono = parseFloat(document.getElementById("lado1-octogono").value)
 
             if (!ladooctogono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do octógono`;
+                exibeResultado(`Você precisa informar o valor do lado do octógono`, erro)
             } else {
                 const resultadoPerimetroOctogono = 8 * ladooctogono;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do octógono de lado = ${ladooctogono} é de ${resultadoPerimetroOctogono}`;
+                exibeResultado(`O resultado do perímetro do octógono de lado = ${ladooctogono} é de ${resultadoPerimetroOctogono}`, sucesso);
+
             }
         }
 
@@ -875,10 +880,11 @@
             const ladoeneagono = parseFloat(document.getElementById("lado1-eneagono").value)
 
             if (!ladoeneagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do eneágono`;
+                exibeResultado(`Você precisa informar o valor do lado do eneágono`, erro)
             } else {
                 const resultadoPerimetroEneagono = 9 * ladoeneagono;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do eneágono de lado = ${ladoeneagono} é de ${resultadoPerimetroEneagono}`;
+                exibeResultado(`O resultado do perímetro do eneágono de lado = ${ladoeneagono} é de ${resultadoPerimetroEneagono}`, sucesso);
+
             }
         }
 
@@ -886,10 +892,11 @@
             const ladodecagono = parseFloat(document.getElementById("lado1-decagono").value)
 
             if (!ladodecagono) {
-                document.getElementById("resultadoUsuario").innerText = `Voce precisa informar o valor do lado do decágono`;
+                exibeResultado(`Você precisa informar o valor do lado do decágono`, erro)
             } else {
                 const resultadoPerimetroDecagono = 10 * ladodecagono;
-                document.getElementById("resultadoUsuario").innerText = `O resultado do perimetro do decágono de lado = ${ladodecagono} é de ${resultadoPerimetroDecagono}`;
+                exibeResultado(`O resultado do perímetro do decágono de lado = ${ladodecagono} é de ${resultadoPerimetroDecagono}`, sucesso);
+
             }
         }
 
